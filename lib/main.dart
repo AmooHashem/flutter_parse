@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 
 import 'Login.dart';
-import 'Message.dart';
 import 'UserPage.dart';
 
 void main() async {
@@ -20,6 +19,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   Future<bool> hasUserLogged() async {
+    //Get current user if exist
     ParseUser currentUser = await ParseUser.currentUser() as ParseUser;
     if (currentUser == null) {
       return false;
@@ -52,6 +52,7 @@ class MyApp extends StatelessWidget {
             switch (snapshot.connectionState) {
               case ConnectionState.none:
               case ConnectionState.waiting:
+                //Waiting for data to fetch from ParseServer
                 return Scaffold(
                   body: Center(
                     child: Container(
@@ -63,10 +64,10 @@ class MyApp extends StatelessWidget {
                 break;
               default:
                 if (snapshot.hasData && snapshot.data!) {
-                  print("1");
+                  //Move to UserPage if user has already logged in
                   return UserPage();
                 } else {
-                  print("2");
+                  //Move to LoginPage
                   return LoginPage();
                 }
             }

@@ -4,9 +4,7 @@ import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'ResetPassword.dart';
 import 'Signup.dart';
 import 'UserPage.dart';
-import 'main.dart';
 import 'Message.dart';
-
 
 class LoginPage extends StatefulWidget {
   @override
@@ -38,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                 Center(
                   child: const Text('Flutter on Back4App',
                       style:
-                      TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 ),
                 SizedBox(
                   height: 16,
@@ -125,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(builder: (context) => UserPage()),
-          (Route<dynamic> route) => false,
+      (Route<dynamic> route) => false,
     );
   }
 

@@ -1,6 +1,6 @@
 # flutter_parse
 
-flutter + parse
+This is an accounting app created with Flutter and ParseServer using back4app.com backend.
 
 ## Getting Started
 
